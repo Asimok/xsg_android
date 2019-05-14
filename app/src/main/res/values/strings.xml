@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">智能会议室</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="about">功能：\n
+注：所有功能的操作均有权限限制，普通员工只能查看房间信息，不可进行预约，修改房间！
+预览会议室
+	用于查看所有会议室三天内的状态，短按 或 长按 可以快速删除该房间所有信息，快速预约选中的房间。
+
+预约会议室
+	可以手动输入 需要预约的 楼号 房间号 开放时间 选择预约日期（今天，明天，后天） 进行预约·。也可以点击 选择房间 按钮预览房间信息,短按选择需要预约的房间，长按可快速删除该房间所有信息。
+
+智能预约
+	可以输入预期的房间容量，房间功能，开会时长，点击交即可为您智能筛选出最优方案。
+三项最少需填写一项。（如果房间较多，查询过程可能较慢，请耐心等待！）,长按需要预定的房间信息进行预约。
+
+取消预约
+短按 或 长按 该账号已预定并且未开始的会议室信息可以取消预约。
+
+“
+智能分组：
+注：在任意智能分组界面可以下拉刷新，获取最新的会议室，刷新成功后需要切换到 非智能分组 界面再切换回 智能分组 界面可加载获取到的最新信息。
+
+楼号 功能 容量 日期 时间段
+	在相应的界面可以按不同分类快速预览会议室状态，长按 会议室信息可以进行快速预约。
+
+首页：
+APP进入的默认主界面。
+当前时段会议室
+	快速预览当前时段会议室状态。短按 或 长按 会议室信息可以快速预约.。限制不可预约被占用会议室以及维修中的会议室。
+
+
+今日会议室状态
+	快速预览当日会议室状态。限制不可预约超过当前时间段的过期会议室。被占用会议室以及维修中的会议室。
+
+管理员
+增加会议室
+	输入 楼号 房间号 容量 选择功能，最低可使用职务 完成新增会议室。 不同的 最低可使用职务 代表房间的不同使用权限。
+注：容量只能输入数字
+
+删除会议室
+	可以输入 楼号 房间号 删除指定房间。也可以点击 选择房间 按钮，选择房间进行删除。
+
+修改会议室
+选择房间可修改房间功能，使用权限，房间状态。房间状态 点选 设为维修，可将房间设为维修 状态，不点选可以设为 空闲 状态。
+
+管理参会人员
+注：选择人员界面可以输入 部门 快速全选该部门人员。如果添加的参会人员当前时间段已有待参加会议，则只添加当前时间段没有会议的人员，并且提示会议冲突的参会人员。
+删减参会人员
+选择已预定并且未开始会议的会议室，可删减该会议的参会人员。点击提交完成操作。
+
+补选参会人员
+选择已预定并且未开始会议的会议室，可增加该会议的参会人员。点击提交完成操作。
+
+查看签到状态
+可以查看当前时间段以及3天内该账号预定会议室中已结束会议的签到状态。
+
+我的
+注：我的 界面上部显示的为用户昵称以及员工号。
+预定信息
+显示该账号预定的未开始会议信息。并且提示条数。点击 详情 可以查看详细的预约信息。
+
+参会信息
+显示该账号将要参加的未开始会议信息。并且提示条数。点击 详情 可以查看详细的参会信息。
+
+编辑
+可以自定义更改注册时的 昵称 性别 手机号 邮箱
+
+注销
+退出登录状态，返回登录界面。
+
+
+</string>
+    <string name="page_preview">人脸属性检测（视频）</string>
+    <string name="face_recognize_mode">人脸比对1:n（视频vs人脸库）</string>
+    <string name="page_single_image">人脸属性检测（图片）</string>
+    <string name="page_multi_image">人脸比对1:n（图片vs图片）</string>
+    <string name="start_process">开始处理</string>
+    <string name="choose_local_image">选择本地图片</string>
+    <string name="choose_main_image">选择主图</string>
+    <string name="add_item_image">添加比对图</string>
+    <string name="processing">处理中</string>
+    <string name="get_picture_failed">获取图片失败</string>
+    <string name="permission_denied">权限被拒绝！</string>
+    <string name="active_engine">激活引擎</string>
+    <string name="active_success">激活引擎成功</string>
+    <string name="already_activated">引擎已激活，无需再次激活</string>
+    <string name="active_failed">引擎激活失败，错误码为 %d</string>
+    <string name="init_failed">引擎初始化失败，错误码为 %d</string>
+    <string name="engine_not_initialized">引擎未初始化，错误码为 %d</string>
+    <string name="notice_choose_main_img">请先选择主图</string>
+    <string name="compare_failed">比对失败，错误码为 %d</string>
+    <string name="register">注册</string>
+    <string name="liveness_detect">活体检测</string>
+    <string name="face_manage">人脸批量注册管理</string>
+    <string name="batch_register">批量注册</string>
+    <string name="notification_register">请将需要注册的图片放在\nsdcard/arcfacedemo/register\n目录下</string>
+    <string name="registering_please_wait">注册中，请稍等</string>
+    <string name="clear_faces">清空人脸库</string>
+    <string name="no_face_need_to_delete">无人脸需要删除</string>
+    <string name="notification">提示</string>
+    <string name="confirm_delete">确认删除这%d张图片及人脸特征？</string>
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="ft_op_0">视频模式仅检测0度</string>
+    <string name="ft_op_90">视频模式仅检测90度</string>
+    <string name="ft_op_180">视频模式仅检测180度</string>
+    <string name="ft_op_270">视频模式仅检测270度</string>
+    <string name="ft_op_all">视频模式全方向人脸检测</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="camera">Camera</string>
+    <string name="message">消息</string>
+    <string name="setting">设置</string>
+    <string name="night">夜间</string>
+    <string name="my_folder">我的文件</string>
+    <string name="my_photo">我的相册</string>
+    <string name="my_favourite">我的收藏</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="add">添加</string>
+    <string name="more">更多</string>
+    <string name="get_more_about_member">了解会员特权</string>
+    <string name="user_name">Ben</string>
+    <string name="email">shib90@qq.com</string>
+    <string name="title_activity_chouti">GoV</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+</resources>
