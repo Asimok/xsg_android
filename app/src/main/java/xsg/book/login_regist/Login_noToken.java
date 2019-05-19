@@ -83,9 +83,7 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public void login(View v) {
 
-    }
 
     @Override
     public void onClick(View v) {

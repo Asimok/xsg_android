@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_25"
-            android:text="昵 称："
+        android:text="昵 称："
             android:textSize="@dimen/sp_20" />
 
         <EditText

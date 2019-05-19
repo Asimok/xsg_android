@@ -16,9 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.contrarywind:Android-PickerView:4.1.8'
     implementation 'com.zyao89:zloading:1.2.0'
     implementation 'com.squareup.okhttp3:okhttp:3.2.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
