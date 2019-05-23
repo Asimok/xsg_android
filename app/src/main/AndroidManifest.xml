@@ -21,7 +21,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login_regist.Login_noToken"></activity>
+        <activity android:name=".main_inteface.detailinfo"></activity>
+        <activity android:name=".main_inteface.main_interface" />
+        <activity android:name=".mine.mine" />
+        <activity android:name=".login_regist.Login_noToken" />
         <activity android:name=".mainFunctions.releaseRequirements" />
         <activity android:name=".test">
             <intent-filter>

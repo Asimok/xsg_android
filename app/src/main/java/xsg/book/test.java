@@ -8,6 +8,8 @@ import android.view.View;
 import xsg.book.login_regist.Login_noToken;
 import xsg.book.login_regist.Regist;
 import xsg.book.mainFunctions.releaseRequirements;
+import xsg.book.main_inteface.main_interface;
+import xsg.book.mine.mine;
 
 public class test extends AppCompatActivity {
 
@@ -34,4 +36,15 @@ public class test extends AppCompatActivity {
         intent = new Intent(this, releaseRequirements.class);
         startActivityForResult(intent, 0);
     }
+    public void mine(View view) {
+        Intent intent;
+        intent = new Intent(this, mine.class);
+        startActivityForResult(intent, 0);
+    }
+    public void main(View view) {
+        Intent intent;
+        intent = new Intent(this, main_interface.class);
+        startActivityForResult(intent, 0);
+    }
+
 }

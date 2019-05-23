@@ -1,12 +1,16 @@
 package xsg.book.login_regist;
 
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,6 +31,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import xsg.book.R;
+import xsg.book.tools.userDBHelper;
 
 public class Login_noToken extends AppCompatActivity implements View.OnClickListener {
     EditText zhanghu, mima;
@@ -36,7 +41,7 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
     String count = "0", logincount = "0";
     private OkHttpClient okhttpClient;
     private String zhanghu2, mima2, Token;
-
+    private userDBHelper helper1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,7 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
     }
 
     private void initView() {
-
+        helper1 = new userDBHelper(this);
         zhanghu = findViewById(R.id.zhanghao);
         mima = findViewById(R.id.mima);
         CK = findViewById(R.id.checkBox);
@@ -183,6 +188,11 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
                 } else if (status.equals("0")) {
                     Toast.makeText(Login_noToken.this, "登录成功！", Toast.LENGTH_LONG).show();
                    // finish();
+                    if (userselect()[0] == null) {
+                        insertUser(zhanghu2,  zhanghu.getText().toString());
+                    } else
+                        userupdate(zhanghu2, mima.getText().toString());
+
                 } else if (status.equals("-2")) {
                     Toast.makeText(Login_noToken.this, "账户名不存在！请注册", Toast.LENGTH_SHORT).show();
 
@@ -251,8 +261,49 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
 
 
 
+    public String[] userselect() {
+
+        SQLiteDatabase db = helper1.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from user", null);
+        String zhanghao = null;
+        String name = null;
+        while (cursor.moveToNext()) {
+            zhanghao = cursor.getString(cursor.getColumnIndex("zhanghao"));
+            name = cursor.getString(cursor.getColumnIndex("name"));
+        }
+        String[] user = {zhanghao, name};
+        Log.d("ddd", "查出来的  账户" + user[0] + "  姓名   " + user[1]);
+        db.close();
+        return user;
+    }
+    public void userupdate(String zhanghu3, String name3) {
 
 
+        //自定义更新
+        SQLiteDatabase db = helper1.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        Log.d("ddd", "更新的账户   " + zhanghu3);
+        values.put("zhanghao", zhanghu3);
+        values.put("name", name3);
+        int i = db.update("user", values, null, null);
+//        if (i == 0) {
+//            Toast.makeText(this, "更新用户信息不成功", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this, "更新用户信息成功", Toast.LENGTH_SHORT).show();
+//        }
+        db.close();
+    }
+    public void insertUser(String zhanghu3, String name3) {
+        //自定义增加数据
+        SQLiteDatabase db1 = helper1.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("zhanghao", zhanghu3);
+        values.put("name", name3);
+        long l = db1.insert("user", null, values);
+
+
+        db1.close();
+    }
 }
 
 
