@@ -7,26 +7,38 @@
     tools:context=".mine.mine"
     android:orientation="vertical">
     <LinearLayout
+        android:background="#37A0B1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <EditText
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/sp_25"
             android:id="@+id/user"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:hint="user"/>
-        <EditText
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
             android:id="@+id/tel"
+            android:textSize="20sp"
             android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:hint="phone"/>
-        <Button
-            android:onClick="search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="获取"/>
 
     </LinearLayout>
+    <TextView
+        android:layout_margin="@dimen/dp_20"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我的发布"/>
 <ListView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

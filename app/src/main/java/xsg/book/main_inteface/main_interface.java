@@ -71,7 +71,7 @@ public class main_interface extends AppCompatActivity implements AdapterView.OnI
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.31.114:8080/xsg_book/main_interfaceServlet")
+                .url("http://192.168.137.1:8080/xsg_book/main_interfaceServlet")
 
                 .post(body)
                 .build();

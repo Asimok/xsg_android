@@ -141,7 +141,8 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.31.114:8080/xsg_book/LoginServlet")
+                .url("http://192.168.137.1:8080/xsg_book/LoginServlet")
+                //.url("http://192.168.137.114:8080/xsg_book/LoginServlet")
 
                 .post(body)
                 .build();

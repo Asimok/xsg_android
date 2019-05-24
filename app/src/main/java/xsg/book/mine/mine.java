@@ -40,7 +40,7 @@ import xsg.book.tools.userDBHelper;
 public class mine extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private List<requirements_info> data;
     private ListView myreq;
-    private EditText user ,tel;
+    private TextView user ,tel;
     private OkHttpClient okhttpClient;
     private userDBHelper helper1;
     @Override
@@ -48,6 +48,7 @@ public class mine extends AppCompatActivity implements AdapterView.OnItemClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mine);
 initview();
+        search();
     }
     private  void initview(){
         helper1 = new userDBHelper(this);
@@ -58,11 +59,12 @@ initview();
         myreq.setOnItemClickListener(this);
     }
 
-    public void search(View view) {
+    public void search() {
         data.clear();
-        final String user1 = user.getText().toString().trim();
 
-        final String tel1 = tel.getText().toString().trim();
+        user.setText(userselect()[0]);
+        tel.setText(userselect()[1]);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -83,7 +85,7 @@ initview();
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.31.114:8080/xsg_book/mineServlet")
+                .url("http://192.168.137.1:8080/xsg_book/mineServlet")
 
                 .post(body)
                 .build();

@@ -26,7 +26,7 @@
         <activity android:name=".mine.mine" />
         <activity android:name=".login_regist.Login_noToken" />
         <activity android:name=".mainFunctions.releaseRequirements" />
-        <activity android:name=".test">
+        <activity android:name=".tab.tab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
