@@ -159,8 +159,8 @@ public class Regist extends AppCompatActivity implements View.OnClickListener {
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 // 192.168.1.101
-                .url("http://192.168.137.1:8080/xsg_book/RegistServlet")
-               // .url("http://192.168.137.114:8080/xsg_book/RegistServlet")//宿舍
+                .url("http://192.168.31.114:8080/xsg_book/RegistServlet")
+               // .url("http://192.168.31.11414:8080/xsg_book/RegistServlet")//宿舍
 
                 .post(body)
                 .build();

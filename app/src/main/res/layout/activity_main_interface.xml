@@ -8,7 +8,13 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="230dp">
+        <com.youth.banner.Banner
+            android:id="@+id/home_play_banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_180"
+            android:layout_gravity="center_horizontal"/>
+
 
     </LinearLayout>
     <LinearLayout
@@ -96,9 +102,12 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+       android:layout_marginTop="@dimen/dp_18"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 <ListView
+    android:divider="#ffffff"
+    android:dividerHeight="@dimen/dp_10"
     android:id="@+id/reqlv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"></ListView>

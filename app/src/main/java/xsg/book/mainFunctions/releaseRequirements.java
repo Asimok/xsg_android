@@ -337,7 +337,7 @@ private String strbookclass,strsuitage;
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.137.1:8080/xsg_book/releaseRequirements")
+                .url("http://192.168.31.114:8080/xsg_book/releaseRequirements")
 
                 .post(body)
                 .build();

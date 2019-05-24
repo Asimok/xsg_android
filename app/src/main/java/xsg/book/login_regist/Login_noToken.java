@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import xsg.book.R;
+import xsg.book.tab.tab;
 import xsg.book.tools.userDBHelper;
 
 public class Login_noToken extends AppCompatActivity implements View.OnClickListener {
@@ -141,8 +143,8 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.137.1:8080/xsg_book/LoginServlet")
-                //.url("http://192.168.137.114:8080/xsg_book/LoginServlet")
+                .url("http://192.168.31.114:8080/xsg_book/LoginServlet")
+                //.url("http://192.168.31.11414:8080/xsg_book/LoginServlet")
 
                 .post(body)
                 .build();
@@ -188,12 +190,13 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(Login_noToken.this, "密码错误!", Toast.LENGTH_SHORT).show();
                 } else if (status.equals("0")) {
                     Toast.makeText(Login_noToken.this, "登录成功！", Toast.LENGTH_LONG).show();
+
                    // finish();
                     if (userselect()[0] == null) {
                         insertUser(zhanghu2,  zhanghu.getText().toString());
                     } else
                         userupdate(zhanghu2, mima.getText().toString());
-
+                    main();
                 } else if (status.equals("-2")) {
                     Toast.makeText(Login_noToken.this, "账户名不存在！请注册", Toast.LENGTH_SHORT).show();
 
@@ -227,12 +230,12 @@ public class Login_noToken extends AppCompatActivity implements View.OnClickList
 //        finish();
 //    }
 
-//    public void main() {
-//        Intent intent;
-//        intent = new Intent(this, tab.class);
-//        startActivityForResult(intent, 0);
-//        finish();
-//    }
+    public void main() {
+        Intent intent;
+        intent = new Intent(this, tab.class);
+        startActivityForResult(intent, 0);
+        finish();
+    }
 
 
 

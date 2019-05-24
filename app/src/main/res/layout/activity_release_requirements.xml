@@ -59,14 +59,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
+            android:textColor="#F1E3E3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_100"
             android:id="@+id/detailad"
-            android:background="#BA4CAF50"
+            android:background="#BA6AD86D"
             android:hint="请输入详细地址"/>
     </LinearLayout>
     <LinearLayout
-        android:background="#F0F6061E"
+        android:background="#FF9800"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -79,7 +80,7 @@
         android:text="姓名："
         android:textSize="18sp" />
         <EditText
-
+            android:textColor="#01635A"
             android:layout_marginLeft="10dp"
             android:id="@+id/user"
             android:layout_width="@dimen/dp_70"
@@ -93,7 +94,7 @@
             android:text="联系方式："
             android:textSize="18sp" />
         <EditText
-
+            android:textColor="#01635A"
             android:layout_marginLeft="10dp"
             android:id="@+id/telephone"
             android:layout_width="@dimen/dp_100"
@@ -102,7 +103,7 @@
         </EditText>
     </LinearLayout>
     <LinearLayout
-        android:background="#3DCDDC39"
+        android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -123,7 +124,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="#3DCDDC39"
+        android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -157,7 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:background="#3DCDDC39"
+        android:background="#ffffff"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -176,7 +177,7 @@
             android:entries="@array/suitage"></Spinner>
     </LinearLayout>
     <LinearLayout
-        android:background="#3DCDDC39"
+        android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -203,6 +204,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
+            android:textColor="#F1E3E3"
             android:background="#BA4CAF50"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_100"
@@ -210,19 +212,24 @@
             android:hint="书籍详细信息"/>
     </LinearLayout>
     <RelativeLayout
-        android:background="#03A9F4"
+     android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
         <Button
-            android:textColor="#ffffff"
-            android:textSize="22sp"
-            android:background="#03A9F4"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="发布"
+            android:id="@+id/fabu"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fabu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:onClick="publish"/>
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/fabu"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="发布"/>
     </RelativeLayout>
 
 </LinearLayout>

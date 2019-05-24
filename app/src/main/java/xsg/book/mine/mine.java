@@ -85,7 +85,7 @@ initview();
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.137.1:8080/xsg_book/mineServlet")
+                .url("http://192.168.31.114:8080/xsg_book/mineServlet")
 
                 .post(body)
                 .build();

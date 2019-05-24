@@ -1,6 +1,7 @@
 package xsg.book.main_inteface;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.youth.banner.loader.ImageLoader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,21 +45,69 @@ public class main_interface extends AppCompatActivity implements AdapterView.OnI
     private List<requirements_info> data;
     private ListView myreq;
 
+    Banner banner;
+
+    private List<String> mTitleList = new ArrayList<>();
+    private List<Integer> mImgList = new ArrayList<>();
+
     private OkHttpClient okhttpClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_interface);
+
         initview();
+
     }
     private  void initview(){
+        banner=findViewById(R.id.home_play_banner);
         data=new ArrayList<requirements_info>();
         myreq= findViewById(R.id.reqlv);
         myreq.setOnItemClickListener(this);
+        search();
+        BannerSet();
+        Banner();
+    }
+    private void BannerSet() {
+        mImgList.add(R.drawable.lb1);
+        mImgList.add(R.drawable.lb2);
+        mImgList.add(R.drawable.lb3);
+        mImgList.add(R.drawable.lb4);
+
+        mTitleList.clear();
+        for (int i = 0; i < mImgList.size(); i++) {
+            mTitleList.add("" );
+        }
+    }
+    private void Banner() {
+
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE); // 显示圆形指示器和标题（水平显示
+//设置图片加载器
+        banner.setImageLoader(new MyLoader());
+//设置图片集合
+        banner.setImages(mImgList);
+//设置banner动画效果
+        banner.setBannerAnimation(Transformer.DepthPage);
+//设置标题集合（当banner样式有显示title时）
+        banner.setBannerTitles(mTitleList);
+//设置自动轮播，默认为true
+        banner.isAutoPlay(true);
+//设置轮播时间
+        banner.setDelayTime(1500);
+//设置指示器位置（当banner模式中有指示器时）
+        banner.setIndicatorGravity(BannerConfig.CENTER);
+//banner设置方法全部调用完毕时最后调用
+        banner.start();
+    }
+    public class MyLoader extends ImageLoader {
+        @Override
+        public void displayImage(Context context, Object path, ImageView imageView) {
+            Glide.with(context).load(path).into(imageView);
+        }
 
     }
 
-    public void search(View view) {
+    public void search() {
         data.clear();
         new Thread(new Runnable() {
             @Override
@@ -71,7 +126,7 @@ public class main_interface extends AppCompatActivity implements AdapterView.OnI
         okhttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
 
-                .url("http://192.168.137.1:8080/xsg_book/main_interfaceServlet")
+                .url("http://192.168.31.114:8080/xsg_book/main_interfaceServlet")
 
                 .post(body)
                 .build();
@@ -236,4 +291,5 @@ public class main_interface extends AppCompatActivity implements AdapterView.OnI
         }
 
     }
+
 }

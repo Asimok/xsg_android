@@ -1,11 +1,13 @@
 package xsg.book.main_inteface;
 
 import android.annotation.SuppressLint;
+import android.app.LocalActivityManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -13,13 +15,17 @@ import xsg.book.R;
 import xsg.book.mine.mine;
 
 public class detailinfo extends AppCompatActivity {
-
+    private LocalActivityManager manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题拦
+
         setContentView(R.layout.activity_detailinfo);
 
 initview();
+        manager = new LocalActivityManager(this, false);
+        manager.dispatchCreate(savedInstanceState);
 
 
     }

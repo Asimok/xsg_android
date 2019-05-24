@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_gravity="center"
-    android:theme="@style/Base.AlertDialog.AppCompat.Light"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_180"
         android:layout_marginTop="@dimen/dp_18"
-        android:background="#4CAF50"
+        android:background="#FF5FADA6"
 
         android:orientation="horizontal">
 
@@ -17,7 +17,7 @@
             android:layout_height="@dimen/dp_170"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
-            android:background="#4CAF50"
+            android:background="#5FADA6"
             android:cacheColorHint="#00000000"
             android:orientation="vertical"
             android:paddingLeft="@dimen/dp_15">
